@@ -100,7 +100,8 @@ Vasya: vasya@example.com
 ``` php
 <?php
 
-echo $users->getDima(); // Получить
+echo $users->getDima();   // Получить
+echo $users->Dima;        // Получить
 echo $users->unsetDima(); // Получить и удалить
 ```
 
@@ -109,7 +110,7 @@ echo $users->unsetDima(); // Получить и удалить
 ``` php
 <?php
 
-echo $users->Dima->email;
+echo $users->Dima->email;   // Удалит данные ключа email
 unset($users->Dima->email); // Удалит ключ email
 ```
 
