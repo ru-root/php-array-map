@@ -83,9 +83,8 @@ echo $page->render($page->unsetTemplate());
 ``` php
 <?php
 
-foreach ($users->page->users as $name => $value)
-{
-    echo nl2br(ucfirst($name) .': '.$value->email .PHP_EOL, FALSE);
+foreach ($users as $name => $value) {
+    echo nl2br($name .': '.$value->email .PHP_EOL, FALSE);
 }
 ```
 
@@ -101,8 +100,8 @@ Vasya: vasya@example.com
 ``` php
 <?php
 
-$dima = $users->page->users->getDima(); // Получить
-$users->page->users->unsetDima(); // удалить
+echo $users->getDima(); // Получить
+echo $users->unsetDima(); // Получить и удалить
 ```
 
 - Или так
@@ -110,8 +109,8 @@ $users->page->users->unsetDima(); // удалить
 ``` php
 <?php
 
-echo $users->page->users->dima->email;
-unset($users->page->users->dima->email); // Удалит ключ email
+echo $users->Dima->email;
+unset($users->Dima->email); // Удалит ключ email
 ```
 
 - Проанализировать построение данных:
