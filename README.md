@@ -40,11 +40,15 @@ require __DIR__ . '/path/vendor/ArrayMap.php';
 
 require __DIR__ . '/path/vendor/ArrayMap.php';
 
-class Users extends ArrayMap
+class Config extends ArrayMap
 {
 }
 
-class Page extends ArrayMap
+class Users extends Config
+{
+}
+
+class Page extends Config
 {
 }
 ```
@@ -54,21 +58,22 @@ class Page extends ArrayMap
 ``` php
 <?php
 
-$users = new Users;
+$users = (new Users)
+    ->load(__DIR__ .'/users.php');
+             $users->setDima(['email' => '']);
 
-$users->load()
-     ->setDima(['id' => 1, 'email' => 'dima@example.com'])
-     ->setVasya(['id' => 2, 'email' => 'vasya@example.com'])
-     ->setPage
-     (
-         (new Page)
-             ->setTitle('List users')
-             ->setDescription('All users site')
-             ->setUsers(clone $users)
-             ->save()
-     )
-     ->unsetDima()
-     ->unsetVasya();
+$page =
+    (new Page)
+        ->setConfig(
+            (new Config)
+                ->load(__DIR__ .'/config.php')
+        )
+        ->setUsers($users)
+        ->setTitle('List users')
+        ->setDescription('All users site')
+        ->setTemplate(__DIR__ .'/template.php');
+
+echo $page->render($page->unsetTemplate());
 ```
 
 ## Доступ к данным
