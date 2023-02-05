@@ -110,7 +110,7 @@ echo $users->unsetDima(); // Получить и удалить
 ``` php
 <?php
 
-echo $users->Dima->email;   // Удалит данные ключа email
+echo $users->Dima->email;   // Получить данные ключа email
 unset($users->Dima->email); // Удалит ключ email
 ```
 
