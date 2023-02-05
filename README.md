@@ -100,9 +100,11 @@ Vasya: vasya@example.com
 ``` php
 <?php
 
-echo $users->getDima();   // Получить
-echo $users->Dima;        // Получить
-echo $users->unsetDima(); // Получить и удалить
+echo $users->getDima();       // Получить
+echo $users->Dima;            // Получить
+echo $page->users->getDima(); // Получить
+echo $page->users->Dima;      // Получить
+echo $users->unsetDima();     // Получить и удалить
 ```
 
 - Или так
@@ -119,7 +121,7 @@ unset($users->Dima->email); // Удалит ключ email
 ``` php
 <?php
 
-var_dump($users);
+var_dump($page);
 ```
 
 ## Available Runtimes
