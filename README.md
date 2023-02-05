@@ -73,6 +73,7 @@ $page =
         ->setDescription('All users site')
         ->setTemplate(__DIR__ .'/template.php');
 
+// Чистые данные в шаблон, без примесей path template и т. д.
 echo $page->render($page->unsetTemplate());
 ```
 
