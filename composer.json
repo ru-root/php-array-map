@@ -1,0 +1,21 @@
+{
+  "name": "ru-root/php-array-map",
+  "description": "Data Structures array",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "DimaYa",
+      "email": "github.ruroot@mail.ru"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "ext-ds": "*"
+  },
+  "autoload": {
+        "psr-4": {
+            "ArrayMap": "vendor/"
+        }
+    }
+}
