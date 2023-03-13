@@ -129,7 +129,5 @@ var_dump($page);
 ### PHP-FPM and traditional web servers
 These runtimes are for PHP-FPM and the more traditional web servers one might use for local development.
 
-### PSR-7 and PSR-15
-Use the popular PSR architecture.
 
 
